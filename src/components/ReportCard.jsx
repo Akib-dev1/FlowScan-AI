@@ -1,5 +1,4 @@
 import { CircleInfo } from "@gravity-ui/icons";
-import React from "react";
 
 const ReportCard = () => {
   return (

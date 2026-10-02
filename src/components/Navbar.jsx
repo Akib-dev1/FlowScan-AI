@@ -5,7 +5,7 @@ const Navbar = () => {
   const NavMenu = (
     <>
       <li className="text-base font-semibold text-[#17211D]">
-        <a href="#">How it works</a>
+        <a href="#how-it-works">How it works</a>
       </li>
       <li className="text-base font-semibold text-[#17211D]">
         <a href="#">Features</a>

@@ -1,6 +1,10 @@
+import CTA from "../components/CTA";
 import Hero from "../components/Hero";
 import HowItWorks from "../components/HowItWorks";
 import ProblemsSection from "../components/ProblemsSection";
+import TelementaryReport from "../components/TelementaryReport";
+import Toolkit from "../components/Toolkit";
+import Visiblity from "../components/Visiblity";
 
 const Home = () => {
   return (
@@ -9,7 +13,11 @@ const Home = () => {
         <Hero />
       </div>
       <ProblemsSection />
-      <HowItWorks />
+      <HowItWorks id="how-it-works" />
+      <Toolkit />
+      <TelementaryReport />
+      <Visiblity />
+      <CTA />
     </>
   );
 };
