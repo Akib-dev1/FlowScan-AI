@@ -1,5 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Dashboard from "../Pages/Dashboard";
+import Scan from "../Pages/Scan";
+import ScanDetails from "../Pages/ScanDetails";
+import Register from "../Pages/Register";
 
 export const router = createBrowserRouter([
   {
@@ -8,23 +14,27 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Home</div>,
+        element: <Home />,
       },
       {
         path: "login",
-        element: <div>Login</div>,
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
       },
       {
         path: "dashboard",
-        element: <div>Dashboard</div>,
+        element: <Dashboard />,
       },
       {
         path: "scan",
-        element: <div>Scan</div>,
+        element: <Scan />,
       },
       {
         path: "scan/:scanId",
-        element: <div>Scan Details</div>,
+        element: <ScanDetails />,
       },
       {
         path: "history",
