@@ -1,11 +1,17 @@
-import React from 'react';
+import Hero from "../components/Hero";
+import HowItWorks from "../components/HowItWorks";
+import ProblemsSection from "../components/ProblemsSection";
 
 const Home = () => {
-    return (
-        <div>
-            I am home
-        </div>
-    );
+  return (
+    <>
+      <div className="my-20 max-w-9/12 max-md:max-w-10/12 max-sm:max-w-11/12 mx-auto">
+        <Hero />
+      </div>
+      <ProblemsSection />
+      <HowItWorks />
+    </>
+  );
 };
 
 export default Home;
