@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import Home from "../Pages/Home";
-import Login from "../pages/Login";
+import Login from "../Pages/Login";
 import Dashboard from "../Pages/Dashboard";
 import Scan from "../Pages/Scan";
 import ScanDetails from "../Pages/ScanDetails";
 import Register from "../Pages/Register";
+import AuthLayout from "../Pages/AuthLayout";
 
 export const router = createBrowserRouter([
   {
@@ -15,10 +16,6 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: "login",
-        element: <Login />,
       },
       {
         path: "register",
@@ -39,6 +36,26 @@ export const router = createBrowserRouter([
       {
         path: "history",
         element: <div>History</div>,
+      },
+    ],
+  },
+  {
+    path: "auth/login",
+    element: <AuthLayout />,
+    children: [
+      {
+        index: true,
+        element: <Login />,
+      },
+    ],
+  },
+  {
+    path: "auth/register",
+    element: <AuthLayout />,
+    children: [
+      {
+        index: true,
+        element: <Register />,
       },
     ],
   },

@@ -1,20 +1,24 @@
 import { Link } from "react-router";
 import { Camera } from "@gravity-ui/icons";
+import { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthContext";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const NavMenu = (
     <>
       <li className="text-base font-semibold text-[#17211D]">
-        <a href="#how-it-works">How it works</a>
+        <Link to={"/#how-it-works"}>How it works</Link>
       </li>
       <li className="text-base font-semibold text-[#17211D]">
-        <a href="#">Features</a>
+        <Link to={"/#features"}>Features</Link>
       </li>
       <li className="text-base font-semibold text-[#17211D]">
-        <a href="#">Telemetry Preview</a>
+        <Link to={"/#telemetry"}>Telemetry Preview</Link>
       </li>
       <li className="text-base font-semibold text-[#17211D]">
-        <a href="#">Impact</a>
+        <Link to={"/#impact"}>Impact</Link>
       </li>
     </>
   );
@@ -57,7 +61,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <Link
-            to="/login"
+            to="/auth/login"
             className="btn btn-ghost btn-link text-[#17211D] no-underline hover:underline text-base mr-2"
           >
             Login
