@@ -7,6 +7,7 @@ import Scan from "../Pages/Scan";
 import ScanDetails from "../Pages/ScanDetails";
 import Register from "../Pages/Register";
 import AuthLayout from "../Pages/AuthLayout";
+import History from "../Pages/History";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "history",
-        element: <div>History</div>,
+        element: <History />,
       },
     ],
   },

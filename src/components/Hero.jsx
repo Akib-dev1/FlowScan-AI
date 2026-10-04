@@ -1,6 +1,7 @@
 import ReportCard from "./ReportCard";
 import { Plus } from "@gravity-ui/icons";
 import { ArrowRight } from "@gravity-ui/icons";
+import { Link } from "react-router";
 
 const Hero = () => {
   return (
@@ -27,15 +28,18 @@ const Hero = () => {
 
             {/* Buttons */}
             <div className="flex items-center gap-4 my-4 flex-wrap max-sm:flex-col max-sm:items-stretch">
-              <button className="flex cursor-pointer items-center justify-center gap-2 px-4 py-2 shadow-md bg-[#15805D] text-white text-lg font-semibold rounded-xl max-md:text-base max-sm:w-full">
+              <Link to={"/scan"} className="flex cursor-pointer items-center justify-center gap-2 px-4 py-2 shadow-md bg-[#15805D] text-white text-lg font-semibold rounded-xl max-md:text-base max-sm:w-full">
                 <Plus />
                 Analyze a Drain
-              </button>
+              </Link>
 
-              <button className="flex items-center justify-center cursor-pointer gap-2 px-4 py-2 text-lg font-semibold shadow-sm border border-gray-200 rounded-xl max-md:text-base max-sm:w-full">
+              <Link
+                to={"/#how-it-works"}
+                className="flex items-center justify-center cursor-pointer gap-2 px-4 py-2 text-lg font-semibold shadow-sm border border-gray-200 rounded-xl max-md:text-base max-sm:w-full"
+              >
                 See How It Works
                 <ArrowRight />
-              </button>
+              </Link>
             </div>
 
             {/* Features */}

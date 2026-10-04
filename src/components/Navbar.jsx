@@ -1,11 +1,10 @@
 import { Link } from "react-router";
-import { Camera } from "@gravity-ui/icons";
+import { Camera, Compass } from "@gravity-ui/icons";
 import { useContext } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const NavMenu = (
     <>
       <li className="text-base font-semibold text-[#17211D]">
@@ -60,18 +59,29 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{NavMenu}</ul>
         </div>
         <div className="navbar-end">
-          <Link
-            to="/auth/login"
-            className="btn btn-ghost btn-link text-[#17211D] no-underline hover:underline text-base mr-2"
-          >
-            Login
-          </Link>
-          <Link
-            to={"/scan"}
-            className="btn rounded-lg bg-[#15805D] text-base flex items-center text-white"
-          >
-            <Camera /> Analyze a Drain
-          </Link>
+          {user ? (
+            <Link
+              to={"/dashboard"}
+              className="btn rounded-lg bg-[#15805D] text-base flex items-center text-white"
+            >
+              <Compass /> Dashboard
+            </Link>
+          ) : (
+            <>
+              <Link
+                to="/auth/login"
+                className="btn btn-ghost btn-link text-[#17211D] no-underline hover:underline text-base mr-2"
+              >
+                Login
+              </Link>
+              <Link
+                to={"/scan"}
+                className="btn rounded-lg bg-[#15805D] text-base flex items-center text-white"
+              >
+                <Camera /> Analyze a Drain
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

@@ -23,6 +23,7 @@ const Login = () => {
     emailLogin(email, password)
       .then((result) => {
         setUser(result.user);
+        toast.success("Login Successful");
         //navigate(state ? state : "/");
       })
       .catch((e) => {
@@ -55,7 +56,7 @@ const Login = () => {
         setUser(result.user);
         //navigate(state ? state : "/");
         setError("");
-        toast("Login Successful");
+        toast.success("Login Successful");
       })
       .catch((error) => {
         setError(error.code);
