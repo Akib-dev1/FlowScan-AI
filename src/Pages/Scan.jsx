@@ -10,6 +10,7 @@ import {
   Sparkles,
 } from "@gravity-ui/icons";
 import { useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 const Scan = () => {
   const navigate = useNavigate();
@@ -94,13 +95,36 @@ const Scan = () => {
       );
 
       const data = await response.json();
+      const imageData = new FormData();
+      imageData.append("image", image);
+      const resp = await fetch(
+        `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_imbbApiKey}`,
+        {
+          method: "POST",
+          body: imageData,
+        },
+      );
 
-      console.log({
-        image,
+      const imgData = await resp.json();
+
+      const imageURL = imgData.data.url;
+      const payload = {
+        image: imageURL,
         location,
-        response: data,
+        data,
+      };
+      console.log("Drainage analysis completed:", payload);
+      const res = await fetch("http://localhost:3000/reports", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
+      const result = await res.json();
+      toast.success(result?.message);
     } catch (error) {
+      toast.error("An error occurred while submitting the report.");
       console.error(error);
     } finally {
       setAnalyzing(false);
